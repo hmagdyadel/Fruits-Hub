@@ -1,0 +1,74 @@
+name: fruits
+description: "E Commerce App"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.2
+
+dependencies:
+  cloud_firestore: ^5.0.2
+  crypto: ^3.0.3
+  cupertino_icons: ^1.0.6
+  dartz: ^0.10.1
+  dots_indicator: ^3.0.0
+  firebase_auth: ^5.0.0
+  firebase_core: ^3.0.0
+  flutter:
+    sdk: flutter
+  flutter_assets_generator: ^0.1.0
+  flutter_bloc: ^8.1.6
+  flutter_facebook_auth: ^7.0.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_svg_provider: ^1.0.7
+  get_it: ^7.7.0
+  google_sign_in: ^6.2.1
+  modal_progress_hud_nsn: ^0.5.1
+  shared_preferences: ^2.2.3
+  sign_in_with_apple: ^6.1.1
+  skeletonizer: ^1.4.2
+  svg_flutter: ^0.0.1
+
+dev_dependencies:
+  flutter_launcher_icons: "^0.13.1"
+
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/vuesax/bold/
+    - assets/images/vuesax/outline/
+
+  fonts:
+    - family: 'Cairo'
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  remove_alpha_ios: true  # Add this line to remove the alpha channel for iOS icons
+  min_sdk_android: 21
+
+flutter_assets:
+  assets_path: assets/images/
+  output_path: lib/core/utils
+  filename: app_images.dart
+  field_prefix: null
+
+flutter_intl:
+  enabled: true

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:fruits/core/helpers/extensions.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../../../core/const/strings.dart';
+import '../../../../../core/const/constants.dart';
 import '../../../../on_boarding/presentation/views/on_boarding_screen.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -28,12 +28,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SvgPicture.asset('$assistsPath/plant.svg'),
+            SvgPicture.asset('$imagesPath/plant.svg'),
           ],
         ),
-        SvgPicture.asset('$assistsPath/logo.svg'),
+        SvgPicture.asset('$imagesPath/logo.svg'),
         SvgPicture.asset(
-          '$assistsPath/splash_bottom.svg',
+          '$imagesPath/splash_bottom.svg',
           fit: BoxFit.fill,
         ),
       ],

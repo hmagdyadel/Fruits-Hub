@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fruits/core/helpers/extensions.dart';
+
 import 'package:svg_flutter/svg_flutter.dart';
+
+import '../../../../../core/const/constants.dart';
+import '../../../../../core/services/shared_preferences_singleton.dart';
+import '../../../../../core/utils/app_text_styles.dart';
+import '../../../../auth/presentation/views/login_view.dart';
 
 class PageViewItem extends StatelessWidget {
   final String imagePath, backgroundColor, subTitle;
@@ -38,11 +45,21 @@ class PageViewItem extends StatelessWidget {
                   imagePath,
                 ),
               ),
-               Visibility(
+              Visibility(
                 visible: isVisible,
-                child: const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Text('تخط'),
+                child: GestureDetector(
+                  onTap: () {
+                    Prefs.setBool(isOnBoardingViewSeen, true);
+                    context.pushReplacementNamed(LoginView.routeName);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      'تخط',
+                      style: TextStyles.regular13
+                          .copyWith(color: const Color(0xFF949D9E)),
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -52,10 +69,12 @@ class PageViewItem extends StatelessWidget {
         title,
         const SizedBox(height: 24),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 37.0),
           child: Text(
             subTitle,
             textAlign: TextAlign.center,
+            style:
+                TextStyles.semiBold13.copyWith(color: const Color(0xFF4E5456)),
           ),
         )
       ],

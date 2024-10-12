@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruits/core/utils/app_color.dart';
+import 'package:fruits/core/utils/app_text_styles.dart';
 
 import '../../../../../core/const/constants.dart';
 import 'page_view_item.dart';
@@ -18,15 +20,27 @@ class OnBoardingPageView extends StatelessWidget {
           backgroundColor: '$imagesPath/page_view_item1_background_image.svg',
           subTitle:
               'إكتشف تجربة تسوق فريدة مع Fruit Hub إستكشف مجموعتنا الواسعة',
-          title: const Row(
+          title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('مرحباً بك في'),
-              Text('Fruit'),
-              Text('HUB'),
+              const Text(
+                'مرحباً بك في',
+                style: TextStyles.bold23,
+              ),
+              Text(
+                ' HUB',
+                style:
+                    TextStyles.bold23.copyWith(color: AppColor.secondaryColor),
+              ),
+              Text(
+                'Fruit',
+                style: TextStyles.bold23.copyWith(color: AppColor.primaryColor),
+              ),
             ],
           ),
-          isVisible: (pageController.hasClients? pageController.page!.round() == 0 : false),
+          isVisible: (pageController.hasClients
+              ? pageController.page!.round() == 0
+              : false),
         ),
         PageViewItem(
           imagePath: '$imagesPath/page_view_item2_image.svg',
@@ -38,7 +52,9 @@ class OnBoardingPageView extends StatelessWidget {
             style: TextStyle(
                 fontSize: 24, fontWeight: FontWeight.bold, fontFamily: 'Cairo'),
           ),
-          isVisible: (pageController.hasClients? pageController.page!.round() == 0 : false),
+          isVisible: (pageController.hasClients
+              ? pageController.page!.round() == 0
+              : false),
         ),
       ],
     );

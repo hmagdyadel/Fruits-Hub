@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/helpers/extensions.dart';
 
-import '../../features/auth/presentation/views/signup_view.dart';
 import '../utils/app_color.dart';
 import '../utils/app_text_styles.dart';
 
-class NotHaveAccount extends StatelessWidget {
-  const NotHaveAccount({
+class HaveAccount extends StatelessWidget {
+  const HaveAccount({
     super.key,
   });
 
@@ -16,16 +15,16 @@ class NotHaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'لا تمتلك حساب؟',
+          'تمتلك حساب بالفعل؟',
           style: TextStyles.semiBold16.copyWith(color: AppColor.darkGray),
         ),
         const SizedBox(width: 5),
         GestureDetector(
           onTap: () {
-            context.pushNamed(SignupView.routeName);
+            context.pop();
           },
           child: Text(
-            'قم بانشاء حساب',
+            'تسجيل الدخول',
             style: TextStyles.semiBold16.copyWith(color: AppColor.primaryColor),
           ),
         )

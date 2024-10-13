@@ -58,11 +58,12 @@ flutter:
           weight: 700
 
 flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
+  android: true   # This will enable Android icon generation
+  ios: true       # This will enable iOS icon generation
   image_path: "assets/images/app_icon.png"
-  remove_alpha_ios: true  # Add this line to remove the alpha channel for iOS icons
-  min_sdk_android: 21
+  android_adaptive_icon_background: "#FFFFFF"  # A white background for Android adaptive icons
+  android_adaptive_icon_foreground: "assets/images/app_icon.png"  # Your icon image
+  remove_alpha_ios: true
 
 flutter_assets:
   assets_path: assets/images/

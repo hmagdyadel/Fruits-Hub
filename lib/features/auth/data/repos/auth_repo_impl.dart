@@ -22,8 +22,8 @@ class AuthRepoImpl extends AuthRepo {
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.toString()));
     } catch (e) {
-      return left(
-          ServerFailure(message: 'An error occurred while creating the user'));
+      return left(ServerFailure(
+          message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً'));
     }
   }
 }

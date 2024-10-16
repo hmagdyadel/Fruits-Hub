@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "720212570476",
+    "project_id": "fruits-cfdc1",
+    "storage_bucket": "fruits-cfdc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720212570476:android:8a1dcd4ed9b74291948349",
+        "android_client_info": {
+          "package_name": "h.magdy.fruits"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPBU9G_AzCnDO5_xaN6YnTNLD0MXnTKLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

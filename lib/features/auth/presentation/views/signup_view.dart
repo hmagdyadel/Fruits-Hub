@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
+import '../../../../core/helpers/build_error_bar.dart';
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../domain/repos/auth_repo.dart';
@@ -43,15 +44,7 @@ class SignupViewBlocConsumer extends StatelessWidget {
         Navigator.pushNamedAndRemoveUntil(
             context, LoginView.routeName, (route) => false);
       } else if (state is SignupFailure) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Row(
-            children: [
-              const Icon(Icons.add_alert_outlined,color: Colors.white,),
-              const SizedBox(width: 10),
-              Text(state.message),
-            ],
-          ),
-        ));
+        buildErrorMessage(context, state.message);
       }
     });
   }

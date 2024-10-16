@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:fruits/core/errors/exceptions.dart';
 import 'package:fruits/core/services/firebase_auth_service.dart';
@@ -22,8 +24,9 @@ class AuthRepoImpl extends AuthRepo {
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.toString()));
     } catch (e) {
+      log('Exception in createUserWithEmailAndPassword ${e.toString()} ');
       return left(ServerFailure(
-          message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً'));
+          message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقا 3ً'));
     }
   }
 }

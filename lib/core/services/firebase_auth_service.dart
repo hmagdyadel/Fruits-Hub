@@ -20,6 +20,9 @@ class FirebaseAuthService {
       } else if (e.code == 'email-already-in-use') {
         throw CustomException(
             message: 'The account already exists for that email.');
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(
+            message: 'تأكد من الاتصال بالانترنت.');
       } else {
         throw CustomException(
             message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً 1.');

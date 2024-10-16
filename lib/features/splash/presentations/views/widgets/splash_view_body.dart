@@ -47,9 +47,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingSeen) {
-        context.pushReplacementNamed(LoginView.routeName);
+        if (mounted) {
+          context.pushReplacementNamed(LoginView.routeName);
+        }
       } else {
-        context.pushReplacementNamed(OnBoardingScreen.routeName);
+        if (mounted) {
+          context.pushReplacementNamed(OnBoardingScreen.routeName);
+        }
       }
     });
   }

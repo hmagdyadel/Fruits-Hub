@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="h.magdy.fruits">
     <application
         android:label="Fruit Hub"
         android:name="${applicationName}"

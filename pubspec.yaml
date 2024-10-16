@@ -2,12 +2,13 @@ name: fruits
 description: "E Commerce App"
 publish_to: 'none'
 
-version: 1.0.0+40
+version: 1.0.0+55
 
 environment:
   sdk: ^3.5.2
 
 dependencies:
+  bloc: ^8.1.4
   cloud_firestore: ^5.0.2
   crypto: ^3.0.3
   cupertino_icons: ^1.0.6

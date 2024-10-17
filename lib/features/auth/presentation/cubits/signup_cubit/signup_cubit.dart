@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 
-import '../../domain/repos/auth_repo.dart';
+import '../../../domain/repos/auth_repo.dart';
 import 'signup_state.dart';
 
 class SignupCubit extends Cubit<SignupState> {

@@ -6,7 +6,7 @@ import 'package:svg_flutter/svg_flutter.dart';
 import '../../../../../core/const/constants.dart';
 import '../../../../../core/services/shared_preferences_singleton.dart';
 import '../../../../../core/utils/app_text_styles.dart';
-import '../../../../auth/presentation/views/login_view.dart';
+import '../../../../auth/presentation/views/signin_view.dart';
 
 class PageViewItem extends StatelessWidget {
   final String imagePath, backgroundColor, subTitle;
@@ -50,7 +50,7 @@ class PageViewItem extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     Prefs.setBool(isOnBoardingViewSeen, true);
-                    context.pushReplacementNamed(LoginView.routeName);
+                    context.pushReplacementNamed(SigninView.routeName);
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(16),

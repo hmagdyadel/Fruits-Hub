@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:fruits/core/helpers/extensions.dart';
-import 'package:fruits/features/auth/presentation/views/login_view.dart';
+import 'package:fruits/features/auth/presentation/views/signin_view.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../../../../../core/const/constants.dart';
@@ -48,7 +48,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingSeen) {
         if (mounted) {
-          context.pushReplacementNamed(LoginView.routeName);
+          context.pushReplacementNamed(SigninView.routeName);
         }
       } else {
         if (mounted) {

@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/const/constants.dart';
 import 'package:fruits/core/helpers/build_error_bar.dart';
 import 'package:fruits/core/widgets/custom_text_field.dart';
-import 'package:fruits/features/auth/presentation/signup_cubit/signup_cubit.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../core/widgets/custom_password_field.dart';
 import '../../../../../core/widgets/have_account.dart';
+import '../../cubits/signup_cubit/signup_cubit.dart';
 import 'terms_and_conditions.dart';
 
 class SignupViewBody extends StatefulWidget {

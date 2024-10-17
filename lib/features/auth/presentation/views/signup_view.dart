@@ -6,9 +6,10 @@ import '../../../../core/helpers/build_error_bar.dart';
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/custom_appbar.dart';
 import '../../domain/repos/auth_repo.dart';
-import '../signup_cubit/signup_cubit.dart';
-import '../signup_cubit/signup_state.dart';
-import 'login_view.dart';
+import '../cubits/signup_cubit/signup_cubit.dart';
+import '../cubits/signup_cubit/signup_state.dart';
+
+import 'signin_view.dart';
 import 'widgets/signup_view_body.dart';
 
 class SignupView extends StatelessWidget {
@@ -42,7 +43,7 @@ class SignupViewBlocConsumer extends StatelessWidget {
     }, listener: (context, state) {
       if (state is SignupSuccess) {
         Navigator.pushNamedAndRemoveUntil(
-            context, LoginView.routeName, (route) => false);
+            context, SigninView.routeName, (route) => false);
       } else if (state is SignupFailure) {
         buildErrorMessage(context, state.message);
       }

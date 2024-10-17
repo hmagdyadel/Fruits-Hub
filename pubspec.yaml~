@@ -2,7 +2,11 @@ name: fruits
 description: "E Commerce App"
 publish_to: 'none'
 
+<<<<<<< HEAD
 version: 1.0.0+51
+=======
+version: 1.0.0+40
+>>>>>>> c568a752bf0206a692adbaafc75b40abc1566457
 
 environment:
   sdk: ^3.5.2

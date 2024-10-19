@@ -57,4 +57,26 @@ class AuthRepoImpl extends AuthRepo {
           message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً .'));
     }
   }
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook () async {
+    try {
+      var user = await firebaseAuthService.signInWithFacebook();
+      return right(UserModel.fromFirebase(user));
+    }  catch (e) {
+      log('Exception in signInWithGoogle ${e.toString()} ');
+      return left(ServerFailure(
+          message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً .'));
+    }
+  }
+  @override
+  Future<Either<Failure, UserEntity>> signInWithApple () async {
+    try {
+      var user = await firebaseAuthService.signInWithApple();
+      return right(UserModel.fromFirebase(user));
+    }  catch (e) {
+      log('Exception in signInWithGoogle ${e.toString()} ');
+      return left(ServerFailure(
+          message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً .'));
+    }
+  }
 }

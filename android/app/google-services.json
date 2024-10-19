@@ -7,12 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:720212570476:android:8a1dcd4ed9b74291948349",
+        "mobilesdk_app_id": "1:720212570476:android:40860a30918cdc3c948349",
         "android_client_info": {
           "package_name": "h.magdy.fruits"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "720212570476-9fbcdcspf1835pljtikq2to0vmg64t3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "h.magdy.fruits",
+            "certificate_hash": "139081b886cc2608418b7221b0e9a68e46cb3cdb"
+          }
+        },
+        {
+          "client_id": "720212570476-f451ouebg4gs3ncc45n8imvvr0l11aad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAPBU9G_AzCnDO5_xaN6YnTNLD0MXnTKLs"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720212570476-f451ouebg4gs3ncc45n8imvvr0l11aad.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "720212570476-nroutho2hke1a43rmjstqn4b7lj3a4j1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "h.magdy.fruits"
+              }
+            }
+          ]
         }
       }
     }

@@ -19,4 +19,7 @@ abstract class TextStyles {
   TextStyle(fontSize: 16, fontWeight: FontWeight.w600);
   static const TextStyle regular13 =
   TextStyle(fontSize: 13, fontWeight: FontWeight.w400);
+  static const TextStyle regular16 =
+  TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
+
 }

@@ -9,7 +9,6 @@ import '../../domain/repos/auth_repo.dart';
 import '../cubits/signup_cubit/signup_cubit.dart';
 import '../cubits/signup_cubit/signup_state.dart';
 
-import 'signin_view.dart';
 import 'widgets/signup_view_body.dart';
 
 class SignupView extends StatelessWidget {
@@ -42,8 +41,7 @@ class SignupViewBlocConsumer extends StatelessWidget {
           child: const SignupViewBody());
     }, listener: (context, state) {
       if (state is SignupSuccess) {
-        Navigator.pushNamedAndRemoveUntil(
-            context, SigninView.routeName, (route) => false);
+        Navigator.pop(context);
       } else if (state is SignupFailure) {
         buildErrorMessage(context, state.message);
       }

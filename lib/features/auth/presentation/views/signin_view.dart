@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits/core/widgets/custom_progress_hud.dart';
-import 'package:fruits/features/auth/presentation/cubits/signin_cubit/signin_state.dart';
 
 import '../../../../core/helpers/build_error_bar.dart';
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/custom_appbar.dart';
-import '../../../on_boarding/presentation/views/on_boarding_screen.dart';
+import '../../../../core/widgets/custom_progress_hud.dart';
+import '../../../home/presentation/views/home_view.dart';
 import '../../domain/repos/auth_repo.dart';
 import '../cubits/signin_cubit/signin_cubit.dart';
+import '../cubits/signin_cubit/signin_state.dart';
 import 'widgets/signin_view_body.dart';
 
 class SigninView extends StatelessWidget {
@@ -43,7 +43,7 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
     }, listener: (BuildContext context, SignInState state) {
       if (state is SignInSuccess) {
         Navigator.pushNamedAndRemoveUntil(
-            context, OnBoardingScreen.routeName, (route) => false);
+            context, HomeView.routeName, (route) => false);
       } else if (state is SignInFailure) {
         buildErrorMessage(context, state.message);
       }

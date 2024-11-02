@@ -28,6 +28,7 @@ class HomeViewBody extends StatelessWidget {
                 FeaturedList(),
                 SizedBox(height: 12),
                 BestSellingHeader(),
+                SizedBox(height: 10),
               ],
             ),
           ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:svg_flutter/svg_flutter.dart';
 
 import '../../../../../core/const/constants.dart';
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/app_text_styles.dart';
+import '../../../../../core/widgets/notification_widget.dart';
 
 class CustomHomeAppbar extends StatelessWidget {
   const CustomHomeAppbar({super.key});
@@ -20,14 +20,7 @@ class CustomHomeAppbar extends StatelessWidget {
         'Haitham Magdy',
         style: TextStyles.bold16.copyWith(color: AppColor.black),
       ),
-      trailing: Container(
-      padding: const EdgeInsets.all(12),
-        decoration: const ShapeDecoration(
-          shape: OvalBorder(),
-          color: Color(0xFFEEF8ED),
-        ),
-        child: SvgPicture.asset('$imagesPath/notification.svg'),
-      ),
+      trailing: const NotificationIcon(),
     );
   }
 }

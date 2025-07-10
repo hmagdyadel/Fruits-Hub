@@ -19,8 +19,10 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
-    executeNavigation();
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      navigateAfterSplash();
+    });
   }
 
   @override
@@ -44,25 +46,18 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-  void executeNavigation() {
-    bool isOnBoardingSeen = Prefs.getBool(isOnBoardingViewSeen);
+  Future<void> navigateAfterSplash() async {
+    await Future.delayed(const Duration(seconds: 3));
 
-    Future.delayed(const Duration(seconds: 3), () {
-      if (isOnBoardingSeen) {
-        if (mounted) {
-          var islogedIn = FirebaseAuthService().isUserLoggedIn();
+    if (!mounted) return;
 
-          if (islogedIn) {
-            context.pushReplacementNamed(HomeView.routeName);
-          } else {
-            context.pushReplacementNamed(SigninView.routeName);
-          }
-        }
-      } else {
-        if (mounted) {
-          context.pushReplacementNamed(OnBoardingScreen.routeName);
-        }
-      }
-    });
+    final isOnBoardingSeen = Prefs.getBool(isOnBoardingViewSeen);
+
+    if (isOnBoardingSeen) {
+      final isLoggedIn = FirebaseAuthService().isUserLoggedIn();
+      context.pushReplacementNamed(isLoggedIn ? HomeView.routeName : SigninView.routeName);
+    } else {
+      context.pushReplacementNamed(OnBoardingScreen.routeName);
+    }
   }
 }

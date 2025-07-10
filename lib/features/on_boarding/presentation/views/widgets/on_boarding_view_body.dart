@@ -1,4 +1,5 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits/core/const/constants.dart';
 import 'package:fruits/core/helpers/extensions.dart';
@@ -67,7 +68,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                 Prefs.setBool(isOnBoardingViewSeen, true);
                 context.pushReplacementNamed(SigninView.routeName);
               },
-              text: 'ابدأ الان',
+              text: 'start_now'.tr(),
             ),
           ),
         ),

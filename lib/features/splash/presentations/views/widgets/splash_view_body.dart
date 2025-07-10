@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:fruits/core/helpers/extensions.dart';
+import 'package:fruits/core/routing/routes.dart';
 import 'package:fruits/core/services/firebase_auth_service.dart';
-import 'package:fruits/features/auth/presentation/views/sign_in_view.dart';
-import 'package:fruits/features/home/presentation/views/home_view.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../../../../../core/const/constants.dart';
 import '../../../../../core/services/shared_preferences_singleton.dart';
-import '../../../../on_boarding/presentation/views/on_boarding_screen.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -32,7 +30,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SvgPicture.asset('$imagesPath/plant.svg'),
           ],
@@ -55,9 +53,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
     if (isOnBoardingSeen) {
       final isLoggedIn = FirebaseAuthService().isUserLoggedIn();
-      context.pushReplacementNamed(isLoggedIn ? HomeView.routeName : SigninView.routeName);
+      context.pushReplacementNamed(isLoggedIn ? Routes.registerScreen : Routes.loginScreen);
     } else {
-      context.pushReplacementNamed(OnBoardingScreen.routeName);
+      context.pushReplacementNamed(Routes.onBoarding);
     }
   }
 }

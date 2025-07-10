@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:fruits/core/helpers/extensions.dart';
 import 'package:fruits/core/services/firebase_auth_service.dart';
-import 'package:fruits/features/auth/presentation/views/signin_view.dart';
+import 'package:fruits/features/auth/presentation/views/sign_in_view.dart';
 import 'package:fruits/features/home/presentation/views/home_view.dart';
 import 'package:svg_flutter/svg.dart';
 

@@ -6,7 +6,7 @@ import 'package:svg_flutter/svg_flutter.dart';
 import '../../../../../core/const/constants.dart';
 import '../../../../../core/services/shared_preferences_singleton.dart';
 import '../../../../../core/utils/app_text_styles.dart';
-import '../../../../auth/presentation/views/signin_view.dart';
+import '../../../../auth/presentation/views/sign_in_view.dart';
 
 class PageViewItem extends StatelessWidget {
   final String imagePath, backgroundColor, subTitle;

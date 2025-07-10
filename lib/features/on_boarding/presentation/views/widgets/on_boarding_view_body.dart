@@ -6,7 +6,7 @@ import 'package:fruits/core/utils/app_color.dart';
 
 import '../../../../../core/services/shared_preferences_singleton.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../../auth/presentation/views/signin_view.dart';
+import '../../../../auth/presentation/views/sign_in_view.dart';
 import 'on_boarding_page_view.dart';
 
 class OnBoardingViewBody extends StatefulWidget {
@@ -52,7 +52,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
               activeColor: AppColor.primaryColor,
               color: currentPage == 1
                   ? AppColor.primaryColor
-                  : AppColor.primaryColor.withOpacity(0.5)),
+                  : AppColor.primaryColor.withAlpha(127)),
         ),
         const SizedBox(height: 29),
         Visibility(

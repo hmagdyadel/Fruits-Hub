@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-import '../../features/auth/presentation/views/signin_view.dart';
+import '../../features/auth/presentation/views/sign_in_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
 import '../../features/best_selling_fruits/views/best_selling_views.dart';
 import '../../features/home/presentation/views/home_view.dart';

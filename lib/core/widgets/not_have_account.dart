@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/helpers/extensions.dart';
 
-import '../../features/auth/presentation/views/signup_view.dart';
+import '../routing/routes.dart';
 import '../utils/app_color.dart';
 import '../utils/app_text_styles.dart';
 
@@ -22,7 +22,7 @@ class NotHaveAccount extends StatelessWidget {
         const SizedBox(width: 5),
         GestureDetector(
           onTap: () {
-            context.pushNamed(SignupView.routeName);
+            context.pushNamed(Routes.registerScreen);
           },
           child: Text(
             'قم بانشاء حساب',

@@ -12,7 +12,6 @@ import '../cubits/signup_cubit/signup_state.dart';
 import 'widgets/signup_view_body.dart';
 
 class SignupView extends StatelessWidget {
-  static const String routeName = 'signup';
 
   const SignupView({super.key});
 

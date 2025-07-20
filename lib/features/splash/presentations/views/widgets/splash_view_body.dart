@@ -5,7 +5,7 @@ import 'package:fruits/core/services/firebase_auth_service.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../../../../../core/const/constants.dart';
-import '../../../../../core/services/shared_preferences_singleton.dart';
+import '../../../../../core/helpers/app_utilities.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -49,13 +49,17 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
     if (!mounted) return;
 
-    final isOnBoardingSeen = Prefs.getBool(isOnBoardingViewSeen);
+    final isOnBoardingSeen = await AppUtilities.instance.getSavedBool(isOnBoardingViewSeen);
 
     if (isOnBoardingSeen) {
       final isLoggedIn = FirebaseAuthService().isUserLoggedIn();
-      context.pushReplacementNamed(isLoggedIn ? Routes.registerScreen : Routes.loginScreen);
+      if (mounted) {
+        context.pushReplacementNamed(isLoggedIn ? Routes.registerScreen : Routes.loginScreen);
+      }
     } else {
-      context.pushReplacementNamed(Routes.onBoarding);
+      if (mounted) {
+        context.pushReplacementNamed(Routes.onBoarding);
+      }
     }
   }
 }

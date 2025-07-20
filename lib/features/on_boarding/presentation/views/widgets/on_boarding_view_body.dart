@@ -5,7 +5,8 @@ import 'package:fruits/core/const/constants.dart';
 import 'package:fruits/core/helpers/extensions.dart';
 import 'package:fruits/core/utils/app_color.dart';
 
-import '../../../../../core/services/shared_preferences_singleton.dart';
+import '../../../../../core/helpers/app_utilities.dart';
+import '../../../../../core/routing/routes.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../auth/presentation/views/sign_in_view.dart';
 import 'on_boarding_page_view.dart';
@@ -20,16 +21,20 @@ class OnBoardingViewBody extends StatefulWidget {
 class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   late PageController pageController;
   var currentPage = 0;
+  final int totalPages = 2;
 
   @override
   void initState() {
+    super.initState();
     pageController = PageController();
     pageController.addListener(() {
-      setState(() {
-        currentPage = pageController.page?.round() ?? 0;
-      });
+      final page = pageController.page?.round() ?? 0;
+      if (page != currentPage) {
+        setState(() {
+          currentPage = page;
+        });
+      }
     });
-    super.initState();
   }
 
   @override
@@ -47,33 +52,42 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             pageController: pageController,
           ),
         ),
-        DotsIndicator(
-          dotsCount: 2,
-          decorator: DotsDecorator(
-              activeColor: AppColor.primaryColor,
-              color: currentPage == 1
-                  ? AppColor.primaryColor
-                  : AppColor.primaryColor.withAlpha(127)),
-        ),
+        buildDotsIndicator(),
         const SizedBox(height: 29),
-        Visibility(
-          visible: currentPage == 1 ? true : false,
-          maintainState: true,
-          maintainSize: true,
-          maintainAnimation: true,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
-            child: CustomButton(
-              onPressed: () {
-                Prefs.setBool(isOnBoardingViewSeen, true);
-                context.pushReplacementNamed(SigninView.routeName);
-              },
-              text: 'start_now'.tr(),
-            ),
-          ),
-        ),
+        onBoardingButton(),
         const SizedBox(height: 43),
       ],
     );
   }
+
+  Widget buildDotsIndicator() {
+    return DotsIndicator(
+      dotsCount: totalPages,
+      decorator: DotsDecorator(
+        activeColor: AppColor.primaryColor,
+        color: currentPage == 1 ? AppColor.primaryColor : AppColor.primaryColor.withAlpha(127),
+      ),
+    );
+  }
+
+  Widget onBoardingButton() {
+    return Visibility(
+      visible: currentPage == totalPages - 1,
+      maintainState: true,
+      maintainSize: true,
+      maintainAnimation: true,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
+        child: CustomButton(
+          onPressed: () async {
+            await AppUtilities.instance.setSavedBool(isOnBoardingViewSeen, true);
+            if (!mounted) return;
+            context.pushReplacementNamed(Routes.loginScreen);
+          },
+          text: 'start_now'.tr(),
+        ),
+      ),
+    );
+  }
+
 }

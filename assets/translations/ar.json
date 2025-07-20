@@ -1,4 +1,10 @@
 {
   "no_internet_connections": "انت غير متصل بالإنترنت",
-  "start_now": "ابدأ الان"
+  "start_now": "ابدأ الان",
+  "skip": "تخط",
+  "welcome": "مرحباً بك في",
+  "search_and_buy": "إبحث وتسوق",
+  "onboarding_subtitle_1": "إكتشف تجربة تسوق فريدة مع Fruit Hub إستكشف مجموعتنا الواسعة",
+  "onboarding_subtitle_2": "إكتشف تجربة تسوق فريدة مع Fruit Hub إستكشف مجموعتنا الواسعة"
+
 }

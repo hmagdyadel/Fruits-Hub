@@ -1,10 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits/core/helpers/extensions.dart';
+import 'package:fruits/core/utils/app_color.dart';
 
 import 'package:svg_flutter/svg_flutter.dart';
 
 import '../../../../../core/const/constants.dart';
-import '../../../../../core/services/shared_preferences_singleton.dart';
+import '../../../../../core/helpers/app_utilities.dart';
+import '../../../../../core/routing/routes.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../auth/presentation/views/sign_in_view.dart';
 
@@ -45,23 +48,12 @@ class PageViewItem extends StatelessWidget {
                   imagePath,
                 ),
               ),
-              Visibility(
-                visible: isVisible,
-                child: GestureDetector(
-                  onTap: () {
-                    Prefs.setBool(isOnBoardingViewSeen, true);
-                    context.pushReplacementNamed(SigninView.routeName);
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Text(
-                      'تخط',
-                      style: TextStyles.regular13
-                          .copyWith(color: const Color(0xFF949D9E)),
-                    ),
-                  ),
+              if (isVisible)
+                Positioned(
+                  top: 16,
+                  right: 16,
+                  child: _SkipButton(),
                 ),
-              ),
             ],
           ),
         ),
@@ -73,11 +65,40 @@ class PageViewItem extends StatelessWidget {
           child: Text(
             subTitle,
             textAlign: TextAlign.center,
-            style:
-                TextStyles.semiBold13.copyWith(color: const Color(0xFF4E5456)),
+            style: TextStyles.semiBold13.copyWith(color: AppColor.black),
           ),
         )
       ],
+    );
+  }
+}
+
+class _SkipButton extends StatefulWidget {
+  @override
+  State<_SkipButton> createState() => _SkipButtonState();
+}
+
+class _SkipButtonState extends State<_SkipButton> {
+  bool _isProcessing = false;
+
+  Future<void> _handleSkip() async {
+    if (_isProcessing) return;
+    setState(() => _isProcessing = true);
+
+    await AppUtilities.instance.setSavedBool(isOnBoardingViewSeen, true);
+
+    if (!mounted) return;
+    context.pushReplacementNamed(Routes.loginScreen);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _handleSkip,
+      child: Text(
+        'skip'.tr(),
+        style: TextStyles.regular13.copyWith(color: AppColor.darkGray),
+      ),
     );
   }
 }

@@ -17,6 +17,7 @@ class FruitHub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppUtilities().init();
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       minTextAdapt: true,

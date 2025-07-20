@@ -1,4 +1,9 @@
 {
   "no_internet_connections": "You are not connected to the internet",
-  "start_now": "Start now"
+  "start_now": "Start now",
+  "skip": "Skip",
+  "welcome": "Welcome to",
+  "search_and_buy": "Search and Shop",
+  "onboarding_subtitle_1": "Discover a unique shopping experience with Fruit Hub. Explore our wide collection.",
+  "onboarding_subtitle_2": "Discover a unique shopping experience with Fruit Hub. Explore our wide collection."
 }

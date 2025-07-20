@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits/core/routing/routes.dart';
+import 'package:fruits/features/best_selling_fruits/views/best_selling_views.dart';
 
 import '../../features/auth/presentation/views/sign_in_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
@@ -21,6 +22,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SignupView());
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => const HomeView());
+        case Routes.bestSellingViews:
+        return MaterialPageRoute(builder: (_) => const BestSellingViews());
       default:
         return MaterialPageRoute(builder: (_) => const SplashView());
     }

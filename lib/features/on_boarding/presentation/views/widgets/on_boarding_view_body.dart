@@ -8,7 +8,6 @@ import 'package:fruits/core/utils/app_color.dart';
 import '../../../../../core/helpers/app_utilities.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../../auth/presentation/views/sign_in_view.dart';
 import 'on_boarding_page_view.dart';
 
 class OnBoardingViewBody extends StatefulWidget {

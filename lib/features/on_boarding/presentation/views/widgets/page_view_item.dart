@@ -9,7 +9,6 @@ import '../../../../../core/const/constants.dart';
 import '../../../../../core/helpers/app_utilities.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/utils/app_text_styles.dart';
-import '../../../../auth/presentation/views/sign_in_view.dart';
 
 class PageViewItem extends StatelessWidget {
   final String imagePath, backgroundColor, subTitle;

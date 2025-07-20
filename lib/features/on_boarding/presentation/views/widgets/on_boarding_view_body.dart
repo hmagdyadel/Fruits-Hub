@@ -5,8 +5,8 @@ import 'package:fruits/core/const/constants.dart';
 import 'package:fruits/core/helpers/extensions.dart';
 import 'package:fruits/core/utils/app_color.dart';
 
-import '../../../../../core/helpers/app_utilities.dart';
 import '../../../../../core/routing/routes.dart';
+import '../../../../../core/services/shared_preferences_singleton.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import 'on_boarding_page_view.dart';
 
@@ -79,7 +79,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
         child: CustomButton(
           onPressed: () async {
-            await AppUtilities.instance.setSavedBool(isOnBoardingViewSeen, true);
+            Prefs.setBool(isOnBoardingViewSeen, true);
             if (!mounted) return;
             context.pushReplacementNamed(Routes.loginScreen);
           },

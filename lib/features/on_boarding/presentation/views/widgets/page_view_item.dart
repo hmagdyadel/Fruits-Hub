@@ -6,8 +6,8 @@ import 'package:fruits/core/utils/app_color.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 import '../../../../../core/const/constants.dart';
-import '../../../../../core/helpers/app_utilities.dart';
 import '../../../../../core/routing/routes.dart';
+import '../../../../../core/services/shared_preferences_singleton.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -84,8 +84,7 @@ class _SkipButtonState extends State<_SkipButton> {
     if (_isProcessing) return;
     setState(() => _isProcessing = true);
 
-    await AppUtilities.instance.setSavedBool(isOnBoardingViewSeen, true);
-
+    Prefs.setBool(isOnBoardingViewSeen, true);
     if (!mounted) return;
     context.pushReplacementNamed(Routes.loginScreen);
   }

@@ -11,7 +11,7 @@ AppBar buildAppBar(context, {required String title}) {
     ),
     leading: GestureDetector(
         onTap: () {
-          Navigator.of(context).pop();
+          context.pop();
         },
         child: const Icon(Icons.arrow_back_ios_new)),
   );

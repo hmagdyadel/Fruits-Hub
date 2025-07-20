@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits/core/utils/app_color.dart';
 
 import 'custom_text_field.dart';
 
@@ -29,10 +30,10 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
         },
         child:obscureText? const Icon(
           Icons.visibility,
-          color: Color(0xFFC9CECF),
+          color: AppColor.iconColor,
         ):const Icon(
           Icons.visibility_off,
-          color: Color(0xFFC9CECF),
+          color: AppColor.iconColor,
         ),
       ),
     );

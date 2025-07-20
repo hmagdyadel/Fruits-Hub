@@ -30,15 +30,12 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: const [
-        Locale(
-          'en',
-        ),
-        Locale(
-          'ar',
-        ),
+        Locale('en'),
+        Locale('ar'),
       ],
       saveLocale: true,
       path: 'assets/translations',
+      fallbackLocale: const Locale('ar'),
       child: FruitHub(
         appRouter: AppRouter(),
       ),

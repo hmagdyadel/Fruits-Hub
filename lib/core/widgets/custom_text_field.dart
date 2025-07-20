@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:fruits/core/utils/app_color.dart';
 import 'package:fruits/core/utils/app_text_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -24,7 +26,7 @@ class CustomTextFormField extends StatelessWidget {
       onSaved: onSaved,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'هذا الحقل مطلوب';
+          return 'required_field'.tr();
         }
         return null;
       },
@@ -32,7 +34,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
           suffixIcon: suffixIcon,
           hintText: hintText,
-          hintStyle: TextStyles.bold13.copyWith(color: const Color(0xFF949D9E)),
+          hintStyle: TextStyles.bold13.copyWith(color: AppColor.darkGray),
           filled: true,
           fillColor: const Color(0xFFF9FAFA),
           border: buildOutlineInputBorder(),

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits/core/utils/app_text_styles.dart';
@@ -40,7 +41,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               onSaved: (value) {
                 email = value!;
               },
-              hintText: 'البريد الالكتروني',
+              hintText: 'email'.tr(),
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 16),
@@ -54,21 +55,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  'نسيت كلمة المرور؟',
-                  style: TextStyles.semiBold13
-                      .copyWith(color: AppColor.lightPrimaryColor),
+                  "forget_password".tr(),
+                  style: TextStyles.semiBold13.copyWith(color: AppColor.lightPrimaryColor),
                 ),
               ],
             ),
             const SizedBox(height: 33),
             CustomButton(
-              text: 'تسجيل الدخول',
+              text: 'login'.tr(),
               onPressed: () {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
-                  context
-                      .read<SigninCubit>()
-                      .signInWithEmailAndPassword(email, password);
+                  context.read<SigninCubit>().signInWithEmailAndPassword(email, password);
                 } else {
                   setState(() {
                     autoValidateMode = AutovalidateMode.always;
@@ -89,19 +87,19 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               label: 'تسجيل بواسطة جوجل',
             ),
             const SizedBox(height: 16),
-            if(Platform.isIOS)
-            Column(
-              children: [
-                SocialLoginButton(
-                  onPressed: () {
-                    context.read<SigninCubit>().signInWithApple();
-                  },
-                  image: '$imagesPath/appl_icon.svg',
-                  label: 'تسجيل بواسطة أبل',
-                ),
-                const SizedBox(height: 16),
-              ],
-            ),
+            if (Platform.isIOS)
+              Column(
+                children: [
+                  SocialLoginButton(
+                    onPressed: () {
+                      context.read<SigninCubit>().signInWithApple();
+                    },
+                    image: '$imagesPath/appl_icon.svg',
+                    label: 'تسجيل بواسطة أبل',
+                  ),
+                  const SizedBox(height: 16),
+                ],
+              ),
             SocialLoginButton(
               onPressed: () {
                 context.read<SigninCubit>().signInWithFacebook();

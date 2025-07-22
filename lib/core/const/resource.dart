@@ -13,8 +13,8 @@ class R {
   /// ![preview](file://C:\Users\h.magdy\StudioProjects\fruits\assets\images\app_icon.png)
   static const String assetsImagesAppIconPng = 'assets/images/app_icon.png';
 
-  /// ![preview](file://C:\Users\h.magdy\StudioProjects\fruits\assets\images\appl_icon.svg)
-  static const String assetsImagesApplIconSvg = 'assets/images/appl_icon.svg';
+  /// ![preview](file://C:\Users\h.magdy\StudioProjects\fruits\assets\images\apple_icon.svg)
+  static const String assetsImagesApplIconSvg = 'assets/images/apple_icon.svg';
 
   /// ![preview](file://C:\Users\h.magdy\StudioProjects\fruits\assets\images\facebook_icon.svg)
   static const String assetsImagesFacebookIconSvg =

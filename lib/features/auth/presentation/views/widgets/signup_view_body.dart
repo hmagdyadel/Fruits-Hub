@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits/core/const/constants.dart';
-import 'package:fruits/core/helpers/build_error_bar.dart';
-import 'package:fruits/core/widgets/custom_text_field.dart';
+import '../../../../../core/const/constants.dart';
+import '../../../../../core/helpers/build_error_bar.dart';
+import '../../../../../core/widgets/custom_text_field.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../core/widgets/custom_password_field.dart';
@@ -56,20 +56,17 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               const SizedBox(height: 16),
               TermsAndConditions(
                 onChanged: (value) {
-                  isTermsAccepted=value;
+                  isTermsAccepted = value;
                 },
               ),
               const SizedBox(height: 30),
               CustomButton(
                 onPressed: () {
-                  
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     if (isTermsAccepted) {
-                      context
-                          .read<SignupCubit>()
-                          .createUserWithEmailAndPassword(email, password, name);
-                    }else{
+                      context.read<SignupCubit>().createUserWithEmailAndPassword(email, password, name);
+                    } else {
                       buildErrorMessage(context, 'يجب عليك الموافقة علي الشروط والأحكام.');
                     }
                   } else {

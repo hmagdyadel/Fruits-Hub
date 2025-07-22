@@ -11,7 +11,12 @@
   "required_field": "هذا الحقل مطلوب",
   "email": "البريد الالكتروني",
   "password": "كلمة المرور",
-  "forgot_password": "هل نسيت كلمة المرور ؟"
-
-
+  "do_not_have_an_account": "ليس لديك حساب؟",
+  "create_account": "قم بانشاء حساب",
+  "forgot_password": "هل نسيت كلمة المرور ؟",
+  "sign_with_google": "تسجيل الدخول بواسطة جوجل",
+  "sign_with_facebook": "تسجيل الدخول بواسطة فيسبوك",
+  "sign_with_apple": "تسجيل الدخول بواسطة ابل",
+  "new_account": "حساب جديد",
+  "or": "أو"
 }

@@ -9,7 +9,14 @@
   "login": "Login",
   "register": "Register",
   "required_field": "This field is required",
+  "do_not_have_an_account": "Don't have an account?",
+  "create_account": "Create Account",
   "email": "Email",
   "password": "Password",
+  "or": "Or",
+  "sign_with_google": "Sign in with Google",
+  "sign_with_facebook": "Sign in with Facebook",
+  "sign_with_apple": "Sign in with Apple",
+  "new_account": "New Account",
   "forgot_password": "Forgot Password"
 }

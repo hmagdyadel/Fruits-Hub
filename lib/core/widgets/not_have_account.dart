@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:fruits/core/helpers/extensions.dart';
+import '../../core/helpers/extensions.dart';
 
 import '../routing/routes.dart';
 import '../utils/app_color.dart';
@@ -16,7 +17,7 @@ class NotHaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'لا تمتلك حساب؟',
+          'do_not_have_an_account'.tr(),
           style: TextStyles.semiBold16.copyWith(color: AppColor.darkGray),
         ),
         const SizedBox(width: 5),
@@ -25,7 +26,7 @@ class NotHaveAccount extends StatelessWidget {
             context.pushNamed(Routes.registerScreen);
           },
           child: Text(
-            'قم بانشاء حساب',
+            "create_account".tr(),
             style: TextStyles.semiBold16.copyWith(color: AppColor.primaryColor),
           ),
         )

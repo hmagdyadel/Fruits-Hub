@@ -84,7 +84,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 context.read<SigninCubit>().signInWithGoogle();
               },
               image: '$imagesPath/google_icon.svg',
-              label: 'تسجيل بواسطة جوجل',
+              label: 'sign_with_google'.tr(),
             ),
             const SizedBox(height: 16),
             if (Platform.isIOS)
@@ -94,8 +94,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     onPressed: () {
                       context.read<SigninCubit>().signInWithApple();
                     },
-                    image: '$imagesPath/appl_icon.svg',
-                    label: 'تسجيل بواسطة أبل',
+                    image: '$imagesPath/apple_icon.svg',
+                    label: 'sign_with_apple'.tr(),
                   ),
                   const SizedBox(height: 16),
                 ],
@@ -105,7 +105,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 context.read<SigninCubit>().signInWithFacebook();
               },
               image: '$imagesPath/facebook_icon.svg',
-              label: 'تسجيل بواسطة فيسبوك',
+              label: "sign_with_facebook".tr(),
             ),
             const SizedBox(height: 16),
           ]),

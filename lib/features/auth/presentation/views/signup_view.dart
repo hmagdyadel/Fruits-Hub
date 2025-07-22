@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -12,7 +13,6 @@ import '../cubits/signup_cubit/signup_state.dart';
 import 'widgets/signup_view_body.dart';
 
 class SignupView extends StatelessWidget {
-
   const SignupView({super.key});
 
   @override
@@ -22,7 +22,7 @@ class SignupView extends StatelessWidget {
         authRepo: getIt<AuthRepo>(),
       ),
       child: Scaffold(
-        appBar: buildAppBar(context, title: 'حساب جديد'),
+        appBar: buildAppBar(context, title: 'new_account'.tr()),
         body: const SignupViewBlocConsumer(),
       ),
     );
@@ -35,9 +35,7 @@ class SignupViewBlocConsumer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignupCubit, SignupState>(builder: (context, state) {
-      return ModalProgressHUD(
-          inAsyncCall: state is SignupLoading ? true : false,
-          child: const SignupViewBody());
+      return ModalProgressHUD(inAsyncCall: state is SignupLoading ? true : false, child: const SignupViewBody());
     }, listener: (context, state) {
       if (state is SignupSuccess) {
         Navigator.pop(context);

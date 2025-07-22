@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fruits/core/utils/app_text_styles.dart';
+
 import 'package:svg_flutter/svg_flutter.dart';
+
+import '../../../../../core/utils/app_color.dart';
+import '../../../../../core/utils/app_text_styles.dart';
 
 class SocialLoginButton extends StatelessWidget {
   final String image;
@@ -22,7 +25,7 @@ class SocialLoginButton extends StatelessWidget {
       child: TextButton(
         style: TextButton.styleFrom(
           shape: RoundedRectangleBorder(
-            side: const BorderSide(color: Color(0xFFDCDEDE), width: 1),
+            side: const BorderSide(color: AppColor.lightGray, width: 1),
             borderRadius: BorderRadius.circular(16),
           ),
         ),

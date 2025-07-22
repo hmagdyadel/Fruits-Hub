@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/const/constants.dart';
@@ -38,14 +39,14 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   onSaved: (value) {
                     name = value!;
                   },
-                  hintText: 'الاسم بالكامل',
+                  hintText: "full_name".tr(),
                   keyboardType: TextInputType.name),
               const SizedBox(height: 16),
               CustomTextFormField(
                   onSaved: (value) {
                     email = value!;
                   },
-                  hintText: 'البريد الالكتروني',
+                  hintText: "email".tr(),
                   keyboardType: TextInputType.emailAddress),
               const SizedBox(height: 16),
               CustomPasswordField(
@@ -67,7 +68,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                     if (isTermsAccepted) {
                       context.read<SignupCubit>().createUserWithEmailAndPassword(email, password, name);
                     } else {
-                      buildErrorMessage(context, 'يجب عليك الموافقة علي الشروط والأحكام.');
+                      buildErrorMessage(context, "accept_terms_and_conditions".tr());
                     }
                   } else {
                     setState(() {
@@ -75,7 +76,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                     });
                   }
                 },
-                text: 'إنشاء حساب جديد',
+                text: 'create_account'.tr(),
               ),
               const SizedBox(height: 26),
               const HaveAccount(),

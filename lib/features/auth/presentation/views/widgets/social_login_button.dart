@@ -21,7 +21,7 @@ class SocialLoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 56,
+      height: 65,
       child: TextButton(
         style: TextButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -30,12 +30,13 @@ class SocialLoginButton extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
+
         child: ListTile(
           visualDensity: const VisualDensity(vertical: VisualDensity.minimumDensity) ,
           leading: SvgPicture.asset(image),
           title: Text(
             label,
-            style: TextStyles.semiBold16,
+            style: TextStyles.semiBold15,
           ),
 
         ),

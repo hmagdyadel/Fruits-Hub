@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits/core/utils/app_color.dart';
@@ -33,13 +34,12 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
         Expanded(
           child: RichText(
             text: TextSpan(
-              text: 'من خلال إنشاء حساب، فإنك توافق علي ',
+              text: 'by_creating_account_you_agree'.tr(),
               style: TextStyles.semiBold13.copyWith(color: AppColor.darkGray),
               children: [
                 TextSpan(
-                  text: 'الشروط والاحكام الخاصة بنا',
-                  style: TextStyles.semiBold13
-                      .copyWith(color: AppColor.lightPrimaryColor),
+                  text: 'our_terms_and_conditions'.tr(),
+                  style: TextStyles.semiBold13.copyWith(color: AppColor.lightPrimaryColor),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       // Handle terms and conditions tap event here

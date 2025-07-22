@@ -55,7 +55,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "forget_password".tr(),
+                  "forgot_password".tr(),
                   style: TextStyles.semiBold13.copyWith(color: AppColor.lightPrimaryColor),
                 ),
               ],

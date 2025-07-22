@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits/core/helpers/extensions.dart';
 
@@ -15,7 +16,7 @@ class HaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'تمتلك حساب بالفعل؟',
+          'already_have_an_account'.tr(),
           style: TextStyles.semiBold16.copyWith(color: AppColor.darkGray),
         ),
         const SizedBox(width: 5),
@@ -24,7 +25,7 @@ class HaveAccount extends StatelessWidget {
             context.pop();
           },
           child: Text(
-            'تسجيل الدخول',
+            'login'.tr(),
             style: TextStyles.semiBold16.copyWith(color: AppColor.primaryColor),
           ),
         )

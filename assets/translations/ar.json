@@ -16,6 +16,11 @@
   "forgot_password": "هل نسيت كلمة المرور ؟",
   "sign_with_google": "تسجيل الدخول بواسطة جوجل",
   "sign_with_facebook": "تسجيل الدخول بواسطة فيسبوك",
+  "full_name": "الاسم بالكامل",
+  "accept_terms_and_conditions": "يجب عليك الموافقة علي الشروط والأحكام.",
+  "already_have_an_account": "تمتلك حساب بالفعل؟",
+  "by_creating_account_you_agree": "من خلال إنشاء حساب، فإنك توافق على ",
+  "our_terms_and_conditions": "الشروط والأحكام الخاصة بنا",
   "sign_with_apple": "تسجيل الدخول بواسطة ابل",
   "new_account": "حساب جديد",
   "or": "أو"

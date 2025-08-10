@@ -23,5 +23,13 @@
   "already_have_an_account": "Already have an account?",
   "by_creating_account_you_agree": "By creating an account, you agree to ",
   "our_terms_and_conditions": "our Terms and Conditions",
-  "forgot_password": "Forgot Password"
+  "forgot_password": "Forgot Password",
+  "weak_password": "The password provided is too weak.",
+  "email_in_use": "The account already exists for that email.",
+  "network_error": "Please check your internet connection.",
+  "unexpected_error": "An unexpected error occurred. Please try again later.",
+  "invalid_credentials": "Incorrect email or password.",
+  "cancelled_by_user": "Sign in was cancelled by user.",
+  "authentication_failed": "Authentication failed.",
+  "facebook_login_failed": "Facebook login failed."
 }

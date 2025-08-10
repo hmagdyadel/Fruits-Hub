@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../../core/errors/exceptions.dart';
@@ -36,7 +37,7 @@ class AuthRepoImpl extends AuthRepo {
       await deleteUser(user);
       log('Exception in createUserWithEmailAndPassword ${e.toString()} ');
       return left(ServerFailure(
-          message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقا 3ً'));
+          message: "unexpected_error".tr() ));
     }
   }
 

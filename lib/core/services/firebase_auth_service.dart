@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -21,21 +22,21 @@ class FirebaseAuthService {
       return userCredential.user!;
     } on FirebaseAuthException catch (e) {
       log('Exception in FirebaseAuthService ${e.toString()} ');
-      if (e.code == 'الكلمة المرور ضعيفة') {
-        throw CustomException(message: 'The password provided is too weak.');
+      if (e.code == 'weak-password') {
+        throw CustomException(message: 'weak_password'.tr());
       } else if (e.code == 'email-already-in-use') {
         throw CustomException(
-            message: 'The account already exists for that email.');
+            message: 'email_in_use'.tr());
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'تأكد من الاتصال بالانترنت.');
+        throw CustomException(message: 'network_error'.tr());
       } else {
         throw CustomException(
-            message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً .');
+            message: 'unexpected_error'.tr());
       }
     } catch (e) {
       log('Exception in FirebaseAuthService.createUserWithEmailAndPassword ${e.toString()} ');
       throw CustomException(
-          message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً 2.');
+          message: 'unexpected_error'.tr());
     }
   }
 
@@ -48,23 +49,23 @@ class FirebaseAuthService {
       log('Exception in FirebaseAuthService ${e.toString()} ');
       if (e.code == 'user-not-found') {
         throw CustomException(
-            message: 'كلمةالمرور أو البريد الإلكتروني غير صحيح.');
+            message: "invalid_credentials".tr());
       } else if (e.code == 'wrong-password') {
         throw CustomException(
-            message: 'كلمةالمرور أو البريد الإلكتروني غير صحيح.');
+            message: "invalid_credentials".tr());
       } else if (e.code == 'invalid-credential') {
         throw CustomException(
-            message: 'كلمةالمرور أو البريد الإلكتروني غير صحيح.');
+            message: "invalid_credentials".tr());
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'تأكد من الاتصال بالانترنت.');
+        throw CustomException(message: 'network_error'.tr());
       } else {
         throw CustomException(
-            message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً .');
+            message: 'unexpected_error'.tr());
       }
     } catch (e) {
       log('Exception in FirebaseAuthService.signInWithEmailAndPassword ${e.toString()} ');
       throw CustomException(
-          message: 'لقد حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً .');
+          message: 'unexpected_error'.tr());
     }
   }
 
@@ -73,7 +74,7 @@ class FirebaseAuthService {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
       if (googleUser == null) {
-        throw CustomException(message: 'Sign in was cancelled by user.');
+        throw CustomException(message: 'cancelled_by_user'.tr());
       }
 
       final GoogleSignInAuthentication googleAuth =
@@ -88,10 +89,10 @@ class FirebaseAuthService {
           .user!;
     } on FirebaseAuthException catch (e) {
       log('FirebaseAuthException: ${e.code} ${e.message}');
-      throw CustomException(message: e.message ?? 'Authentication failed.');
+      throw CustomException(message: e.message ?? "authentication_failed".tr());
     } catch (e) {
       log('SignInWithGoogle Error: ${e.toString()}');
-      throw CustomException(message: 'An unexpected error occurred.');
+      throw CustomException(message: "unexpected_error".tr());
     }
   }
 
@@ -106,7 +107,7 @@ class FirebaseAuthService {
 
       // Check login status
       if (loginResult.status != LoginStatus.success) {
-        throw CustomException(message: 'Facebook login failed.');
+        throw CustomException(message: "facebook_login_failed".tr());
       }
 
       // Get the access token
@@ -135,10 +136,10 @@ class FirebaseAuthService {
       return userCredential.user!;
     } on FirebaseAuthException catch (e) {
       log('FirebaseAuthException: ${e.code} - ${e.message}');
-      throw CustomException(message: e.message ?? 'Authentication failed.');
+      throw CustomException(message: e.message ?? "authentication_failed".tr());
     } catch (e) {
       log('SignInWithFacebook Error: ${e.toString()}');
-      throw CustomException(message: 'An unexpected error occurred.');
+      throw CustomException(message: "unexpected_error".tr());
     }
   }
 

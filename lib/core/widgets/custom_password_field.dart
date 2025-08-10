@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits/core/utils/app_color.dart';
 
@@ -20,7 +21,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
     return CustomTextFormField(
       obscureText: obscureText,
       onSaved: widget.onSaved,
-      hintText: 'كلمة المرور',
+      hintText: 'password'.tr(),
       keyboardType: TextInputType.visiblePassword,
       suffixIcon: GestureDetector(
         onTap: () {

@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../../../core/helpers/build_error_bar.dart';
-import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/custom_appbar.dart';
-import '../../domain/repos/auth_repo.dart';
 import '../cubits/signup_cubit/signup_cubit.dart';
 import '../cubits/signup_cubit/signup_state.dart';
 
@@ -17,14 +15,9 @@ class SignupView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SignupCubit(
-        authRepo: getIt<AuthRepo>(),
-      ),
-      child: Scaffold(
-        appBar: buildAppBar(context, title: 'new_account'.tr()),
-        body: const SignupViewBlocConsumer(),
-      ),
+    return Scaffold(
+      appBar: buildAppBar(context, title: 'new_account'.tr()),
+      body: const SignupViewBlocConsumer(),
     );
   }
 }
